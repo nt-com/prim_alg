@@ -16,6 +16,7 @@
 ////////////////////////////////////////////////////
 #include <iostream>
 #include "prim_cfg.h"
+#include "graph.h"
 
 // NAMESPACE
 using namespace std;
@@ -87,6 +88,11 @@ class prim {
 	
 		/// @brief prints the calculated minimal spanning tree
 		void print(void);
+
+		/// @brief Prim's Algorithm
+		/// @param g a connected graph to apply the algorithm to
+		/// @return void
+		void primsAlgorithm(graph &g); 
 
 };
 

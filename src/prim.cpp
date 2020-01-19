@@ -96,6 +96,45 @@ void prim::print(void) {
 
 }
 
+void prim::primsAlgorithm(graph &g) {
+
+	int currentNode = g_UNDEFINED;
+	unsigned int edgeValue = g_INFINITY;
+
+	// change one key value so the node gets picked
+	setKeyValue(0,0);	
+	setParent(0, g_UNDEFINED);
+
+	cout << "Starting Prim's Algorithm" << endl;
+
+	for(int v = 0; v < g.getSize() - 1; v++) {
+
+		// get the node with the minimum key value
+		currentNode = getMinKey();
+
+		// set node as included in spanning tree
+		setSpTree(currentNode);
+
+		// update adjacent vertices
+		for(int n = 0; n < g.getSize(); n++) {
+
+			edgeValue = g.getWeight(currentNode, n);
+			// if there is an edge between the current node and another node
+			if( edgeValue ) {
+				// if a node is not yet included in spanning tree 
+				// if the edge value is smaller than the key value update
+				if( (getSpTree(n) == false) && (edgeValue < getKeyValue(n)) ) {
+					setParent(n, currentNode);
+					setKeyValue(n, edgeValue);
+				}
+			} // if edgeValue
+
+		} // for inner (n)
+			
+	} // for outer (v)	
+
+}
+
 
 ////////////////////////////////////////////////////
 // EOF
