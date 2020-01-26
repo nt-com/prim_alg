@@ -15,6 +15,7 @@
 // LIBRARIES
 ////////////////////////////////////////////////////
 #include <iostream>
+#include <vector>
 #include "prim_cfg.h"
 #include "graph.h"
 
@@ -32,11 +33,11 @@ class prim {
 	
 	private:
 		/// @brief parent nodes of a node
-		int *parent;
+		vector<int> *parent;
 		/// @brief values to pick values put in the spanning tree 
-		int *keyValue;
+		vector<int> *keyValue;
 		/// @brief values not yet included in the spanning tree
-		bool *spTree;
+		vector<bool> *spTree;
 		/// @brief size of the underlying graph
 		unsigned int primSize;
 
@@ -95,7 +96,6 @@ class prim {
 		void primsAlgorithm(graph &g); 
 
 };
-
 
 ////////////////////////////////////////////////////
 // EOF

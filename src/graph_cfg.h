@@ -16,9 +16,9 @@
 ////////////////////////////////////////////////////
 
 /// @brief maximal weight an edge can have
-const unsigned int 	g_MAXIMAL_WEIGHT = 30;
+const unsigned int 	g_MAXIMAL_WEIGHT = 10;
 /// @brief the number of nodes in the graph (for graph generation)
-const unsigned int 	g_GRAPH_SIZE = 7;
+const unsigned int 	g_GRAPH_SIZE = 4;
 
 ////////////////////////////////////////////////////
 // EOF
